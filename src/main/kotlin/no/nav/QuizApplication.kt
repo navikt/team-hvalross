@@ -39,7 +39,7 @@ class QuizApplication(private val teamName: String): QuizParticipant(teamName) {
     }
 
     private fun arithmetic(question: Question){
-        x = 94/95
+        val x = 94/95
         answer(question.category, questionId="f1e5fa1d-b2af-4d5b-a37a-4f5e116ec848", round(x))
     }
     /*
