@@ -4,6 +4,7 @@ import no.nav.quizrapid.*
 import no.nav.rapid.Answer
 import no.nav.rapid.Assessment
 import no.nav.rapid.Question
+import kotlin.math.round
 
 
 /**
@@ -16,6 +17,7 @@ class QuizApplication(private val teamName: String): QuizParticipant(teamName) {
     override fun handle(question: Question) {
         logger.log(question)
         if (question.category == "team-registration") handleRegisterTeam(question)
+        if (question.category == "arithmetic") arithmetic(question)
     }
 
 
@@ -35,5 +37,14 @@ class QuizApplication(private val teamName: String): QuizParticipant(teamName) {
         //TODO("Her må du skrive kode ;)")
         answer(question.category, questionId = question.id(), "#FFFFFF")
     }
+
+    private fun arithmetic(question: Question){
+        x = 94/95
+        answer(question.category, questionId="f1e5fa1d-b2af-4d5b-a37a-4f5e116ec848", round(x))
+    }
+    /*
+    [Question] category: arithmetic, question: 
+    94 / 95 (svaret må rundes til int), id: f1e5fa1d-b2af-4d5b-a37a-4f5e116ec848
+    */
 
 }
